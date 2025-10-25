@@ -1,0 +1,58 @@
+{
+  "api": {
+    "shoppingagentapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "shoppingagentlambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "shoppingagentlambda": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_shoppingagentlambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "shoppingagentlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_shoppingagentlambda_geminiApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "shoppingagentlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_shoppingagentlambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "shoppingagentlambda"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "shoppingdb": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "resourceName": "shoppingdb",
+  "tableName": "shoppingdb",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

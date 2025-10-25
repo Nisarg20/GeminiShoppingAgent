@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/phones": {
+      "name": "/phones",
+      "lambdaFunction": "shoppingagentlambda",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/search": {
+      "name": "/search",
+      "lambdaFunction": "shoppingagentlambda",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
