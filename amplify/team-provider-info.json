@@ -1,0 +1,27 @@
+{
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-geminishoppingagent-main-d3142-authRole",
+      "UnauthRoleArn": "arn:aws:iam::582955302549:role/amplify-geminishoppingagent-main-d3142-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::582955302549:role/amplify-geminishoppingagent-main-d3142-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-geminishoppingagent-main-d3142-deployment",
+      "UnauthRoleName": "amplify-geminishoppingagent-main-d3142-unauthRole",
+      "StackName": "amplify-geminishoppingagent-main-d3142",
+      "StackId": "arn:aws:cloudformation:us-east-1:582955302549:stack/amplify-geminishoppingagent-main-d3142/f2d96e70-b1dd-11f0-a472-129e2e96a2f9",
+      "AmplifyAppId": "dqd7udlc7o39h"
+    },
+    "categories": {
+      "function": {
+        "shoppingagentlambda": {
+          "geminiApiKey": "AIzaSyDvwD4WvH2LaCocTkFXtzPFEmOA6pDDB9Q",
+          "deploymentBucketName": "amplify-geminishoppingagent-main-d3142-deployment",
+          "s3Key": "amplify-builds/shoppingagentlambda-6178555848657038704a-build.zip"
+        }
+      },
+      "storage": {
+        "shoppingdb": {}
+      }
+    }
+  }
+}
