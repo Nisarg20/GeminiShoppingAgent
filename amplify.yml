@@ -1,12 +1,14 @@
 version: 1
 backend:
   phases:
+    preBuild:
+      commands:
+        - export PYTHON_VERSION=3.10
+        - export PIPENV_PYTHON=3.10
     build:
       commands:
         - '# Execute Amplify CLI with the helper script'
         - amplifyPush --simple
-        - export PYTHON_VERSION=3.10
-        - export PIPENV_PYTHON=3.10
 frontend:
   phases:
     preBuild:
@@ -16,7 +18,7 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: build
+    baseDirectory: dist
     files:
       - '**/*'
   cache:
