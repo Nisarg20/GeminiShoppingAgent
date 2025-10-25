@@ -74,10 +74,11 @@ export default function AISearchInterface() {
   const [error, setError] = useState<string>('');
   const [selectedPhone, setSelectedPhone] = useState<Phone | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const API_ENDPOINT = import.meta.env.VITE_API_KEY
+  const API_BASE_URL = import.meta.env.VITE_API_ENDPOINT
+  const API_KEY = import.meta.env.VITE_API_KEY
 
-  const API_URL = `${API_ENDPOINT}/phones`;
-  const GEMINI_URL = `${API_ENDPOINT}/search`; // GEMINI ENDPOINT
+  const FETCH_ALL = `${API_BASE_URL}/phones`; // PHONE DATA ENDPOINT
+  const GEMINI_URL = `${API_BASE_URL}/search`; // GEMINI ENDPOINT
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -105,7 +106,10 @@ export default function AISearchInterface() {
 
       const response = await fetch(GEMINI_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-api-key': API_KEY
+        },
         body: JSON.stringify({ 
           query: searchQuery,
           history: history 
@@ -149,7 +153,7 @@ export default function AISearchInterface() {
     setError('');
 
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(FETCH_ALL);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
