@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"14.1.2\",\"stackType\":\"function-Lambda\",\"metadata\":{\"whyContinueWithGen1\":\"Prefer not to answer\"}}",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"14.1.2\",\"stackType\":\"function-Lambda\",\"metadata\":{\"whyContinueWithGen1\":\"\"}}",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -86,7 +86,7 @@
         },
         "Runtime": "python3.8",
         "Layers": [],
-        "Timeout": 60
+        "Timeout": 25
       }
     },
     "LambdaExecutionRole": {
@@ -95,12 +95,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "shoppingagentLambdaRolea4a302ff",
+            "geminishoppingagentLambdaRole81d8cf71",
             {
               "Fn::Join": [
                 "",
                 [
-                  "shoppingagentLambdaRolea4a302ff",
+                  "geminishoppingagentLambdaRole81d8cf71",
                   "-",
                   {
                     "Ref": "env"

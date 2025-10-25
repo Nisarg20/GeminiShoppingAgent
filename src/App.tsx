@@ -75,8 +75,8 @@ export default function AISearchInterface() {
   const [selectedPhone, setSelectedPhone] = useState<Phone | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const API_URL = 'https://42930c3laj.execute-api.us-east-1.amazonaws.com/main/phones';
-  const GEMINI_URL = 'https://42930c3laj.execute-api.us-east-1.amazonaws.com/main/search'; // GEMINI ENDPOINT
+  const API_URL = `${API_ENDPOINT}/phones`;
+  const GEMINI_URL = `${API_ENDPOINT}/search`; // GEMINI ENDPOINT
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });

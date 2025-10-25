@@ -1,6 +1,6 @@
 {
   "api": {
-    "shoppingagentapi": {
+    "shoppingapi": {
       "dependsOn": [
         {
           "attributes": [
