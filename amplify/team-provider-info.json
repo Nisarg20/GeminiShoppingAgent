@@ -18,8 +18,7 @@
       "function": {
         "shoppingagentlambda": {
           "geminiApiKey": "AIzaSyCxoxvpZaAKRBt7bKzfs5odCYBMdIPbAxk",
-          "deploymentBucketName": "amplify-geminishoppingagent-main-d3142-deployment",
-          "s3Key": "amplify-builds/shoppingagentlambda-78427658545773663830-build.zip"
+          "deploymentBucketName": "amplify-geminishoppingagent-main-d3142-deployment"
         }
       },
       "api": {
