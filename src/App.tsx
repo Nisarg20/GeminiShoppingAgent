@@ -74,7 +74,7 @@ export default function AISearchInterface() {
   const [error, setError] = useState<string>('');
   const [selectedPhone, setSelectedPhone] = useState<Phone | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
+  const API_ENDPOINT = import.meta.env.VITE_API_KEY
 
   const API_URL = `${API_ENDPOINT}/phones`;
   const GEMINI_URL = `${API_ENDPOINT}/search`; // GEMINI ENDPOINT
