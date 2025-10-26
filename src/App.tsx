@@ -121,11 +121,13 @@ export default function AISearchInterface() {
       }
 
       const data = await response.json();
+
+      const sortedData = data.phones ? data.phones.sort((a: Phone, b: Phone) => a.Price - b.Price) : [];
       
       const assistantMessage: Message = {
         role: 'assistant',
         content: data.explanation || data.response || 'Here are the phones matching your query:',
-        phones: data.phones || [],
+        phones: sortedData.phones || [],
         responseType: data.response_type || 'conversational',
         rationale: data.rationale || ''
       };
