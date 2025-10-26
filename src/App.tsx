@@ -88,6 +88,10 @@ export default function AISearchInterface() {
     scrollToBottom();
   }, [messages]);
 
+  const sortPhonesByPrice = (phones: Phone[]): Phone[] => {
+    return [...phones].sort((a, b) => a.Price - b.Price);
+  }
+
   const handleSearch = async () => {
     if (!searchQuery.trim()) return;
 
@@ -122,12 +126,10 @@ export default function AISearchInterface() {
 
       const data = await response.json();
 
-      const sortedData = data.phones ? data.phones.sort((a: Phone, b: Phone) => a.Price - b.Price) : [];
-      
       const assistantMessage: Message = {
         role: 'assistant',
         content: data.explanation || data.response || 'Here are the phones matching your query:',
-        phones: sortedData.phones || [],
+        phones: sortPhonesByPrice(data.phones || []),
         responseType: data.response_type || 'conversational',
         rationale: data.rationale || ''
       };
@@ -162,13 +164,11 @@ export default function AISearchInterface() {
       }
       
       const data = await response.json();
-
-      const sortedData = data.sort((a: Phone, b: Phone) => a.Price - b.Price);
       
       const message: Message = {
         role: 'assistant',
-        content: `Here's our complete collection of ${sortedData.length} smartphones. Browse through our catalog to find your perfect match!`,
-        phones: sortedData,
+        content: `Here's our complete collection of ${data.length} smartphones. Browse through our catalog to find your perfect match!`,
+        phones: sortPhonesByPrice(data.phones),
         responseType: 'recommendation'
       };
       
