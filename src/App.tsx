@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Search, Sparkles, Cpu, Battery, Camera, Monitor, Send, Grid3x3 } from 'lucide-react';
+import { Search, Sparkles, Cpu, Battery, Camera, Monitor, Send, Grid3x3, X } from 'lucide-react';
 
 interface Phone {
   id: string;
@@ -268,18 +268,16 @@ export default function AISearchInterface() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder= "Ask me anything"
-                  className="flex-1 bg-transparent text-sm sm:text-base outline-none text-white placeholder-gray-400"
+                  placeholder="Ask me anything"
+                  className="flex-1 bg-transparent text-sm sm:text-base outline-none text-white placeholder-gray-400 w-full"
                 />
 
-                <div className="flex items-center gap-2  sm:w-auto">
+                <div className="flex items-center gap-2 ">
                   <button 
                     onClick={handleShowAllPhones} 
-                    className="flex items-center justify-center gap-1 sm:gap-2 flex-1 sm:flex-none px-2 sm:px-3 py-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors text-xs sm:text-sm whitespace-nowrap"
+                    className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors text-xs sm:text-sm whitespace-nowrap"
                   >
-                    <Grid3x3 className="w-4 h-4" /> 
-                    <span className="hidden sm:inline">Catalog</span>
-                  </button>
+                    <Grid3x3 className="w-4 h-4 sm:w-4 sm:h-4" />Catalog</button>
 
                   <button
                     onClick={handleSearch}
@@ -401,24 +399,6 @@ export default function AISearchInterface() {
                 )}
               </div>
             ))}
-            
-          {isLoading && (
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-white animate-spin" />
-                </div>
-                <div className="backdrop-blur-xl rounded-2xl p-4 bg-gray-800/60 border border-purple-500/20">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-purple-400 animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <div className="w-2 h-2 rounded-full bg-pink-400 animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <div className="w-2 h-2 rounded-full bg-blue-400 animate-bounce" style={{ animationDelay: '300ms' }} />
-                    <span className="text-gray-300 ml-2">Thinking...</span>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            <div ref={messagesEndRef} />
           </div>
         </div>
       )}
