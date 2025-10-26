@@ -230,9 +230,9 @@ export default function AISearchInterface() {
               <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
                 {[
                   "Best camera phone under ₹30,000?",
-                  "Compact Android with good one-hand use",
-                  "Compare Pixel 8a vs OnePlus 12R",
-                  "Battery king with fast charging, around ₹15k",
+                  "Compact phone with good one-hand use",
+                  "Compare OnePlus 13S vs OnePlus 13R",
+                  "Battery king with fast charging, around ₹35k",
                   "Explain OIS vs EIS",
                   "Show me Samsung phones only, under ₹25k"
                 ].map((example, idx) => (
