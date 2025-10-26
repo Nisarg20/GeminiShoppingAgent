@@ -16,8 +16,8 @@ An intelligent, conversational phone recommendation system powered by Google Gem
 
 - [Overview](#-overview)
 - [Features](#-features)
-- [Architecture](#-architecture)
-- [Tech Stack](#-tech-stack)
+- [Architecture](#%EF%B8%8F-architecture)
+- [Tech Stack](#%EF%B8%8F-tech-stack)
 - [Project Structure](#-project-structure)
 - [Setup & Installation](#-setup--installation)
 - [Environment Variables](#-environment-variables)
