@@ -8,23 +8,23 @@ An intelligent, conversational phone recommendation system powered by Google Gem
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
 [![Google Gemini](https://img.shields.io/badge/Google-Gemini_AI-4285F4?logo=google)](https://ai.google.dev/)
 
-> **Live Demo:** [View Application](https://main.dqd7udlc7o39h.amplifyapp.com) | **Phone Images:** [images](https://postimg.cc/gallery/Fzv363s) | **Dataset:** [phone dataset](https://drive.google.com/file/d/1iJmOm5fOi0-aK-Bs4YspgC8OhV2zbkN-/view?usp=sharing) (Data referenced from [GSMArena](https://www.gsmarena.com/)
+> **Live Demo:** [View Application](https://main.dqd7udlc7o39h.amplifyapp.com) | **Phone Images:** [images](https://postimg.cc/gallery/Fzv363s) | **Dataset:** [phone dataset](https://drive.google.com/file/d/1iJmOm5fOi0-aK-Bs4YspgC8OhV2zbkN-/view?usp=sharing) (Data referenced from [GSMArena](https://www.gsmarena.com/))
 
 ---
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Architecture](#architecture)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Setup & Installation](#setup--installation)
-- [Environment Variables](#environment-variables)
-- [Deployment](#deployment)
-- [API Documentation](#api-documentation)
-- [Usage Examples](#usage-examples)
-- [Security](#security)
+- [Overview](##overview)
+- [Features](##features)
+- [Architecture](##architecture)
+- [Tech Stack](##tech-stack)
+- [Project Structure](##project-structure)
+- [Setup & Installation](##setup--installation)
+- [Environment Variables](##environment-variables)
+- [Deployment](##deployment)
+- [API Documentation](##api-documentation)
+- [Usage Examples](##usage-examples)
+- [Security](##security)
 
 ---
 
