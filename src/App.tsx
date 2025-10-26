@@ -267,15 +267,10 @@ export default function AISearchInterface() {
                   className="flex-1 bg-transparent text-base outline-none text-white placeholder-gray-400"
                 />
 
-                {isSearchActive && (
-                  <button
-                    onClick={handleShowAllPhones}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors text-sm"
-                  >
-                    <Grid3x3 className="w-4 h-4" />
-                    Catalog
-                  </button>
-                )}
+                
+                <button onClick={handleShowAllPhones} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors text-sm">
+                <Grid3x3 className="w-4 h-4" /> Catalog </button>
+            
 
                 <button
                   onClick={handleSearch}
