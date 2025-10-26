@@ -89,7 +89,8 @@ export default function AISearchInterface() {
   }, [messages]);
 
   const sortPhonesByPrice = (phones: Phone[]): Phone[] => {
-    return [...phones].sort((a, b) => a.Price - b.Price);
+    console.log('Sorting phones:', phones);
+    return phones ? [...phones].sort((a, b) => a.Price - b.Price): [];
   }
 
   const handleSearch = async () => {
@@ -168,7 +169,7 @@ export default function AISearchInterface() {
       const message: Message = {
         role: 'assistant',
         content: `Here's our complete collection of ${data.length} smartphones. Browse through our catalog to find your perfect match!`,
-        phones: sortPhonesByPrice(data.phones),
+        phones: sortPhonesByPrice(data),
         responseType: 'recommendation'
       };
       
@@ -273,7 +274,7 @@ export default function AISearchInterface() {
 
                 
                 <button onClick={handleShowAllPhones} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors text-sm">
-                <Grid3x3 className="w-4 h-4" /> Catalog </button>
+                <Grid3x3 className="w-3 h-3 sm:w-4 sm:h-4" /><span className="hidden sm:inline">Catalog</span> </button>
             
 
                 <button
@@ -281,7 +282,7 @@ export default function AISearchInterface() {
                   disabled={!searchQuery.trim() || isLoading}
                   className="p-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-5 h-5" />
+                  <Send className="w-3 h-3 sm:w-4 sm:h-4" />
                 </button>
               </div>
             </div>
@@ -310,7 +311,7 @@ export default function AISearchInterface() {
                   message.role === 'user' ? 'justify-end' : 'justify-start'
                 }`}>
                   {message.role === 'assistant' && (
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                    <div className="flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
                       <Sparkles className="w-5 h-5 text-white" />
                     </div>
                   )}
