@@ -183,7 +183,7 @@ export default function AISearchInterface() {
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey && !isLoading) {
       e.preventDefault();
       handleSearch();
     }
