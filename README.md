@@ -8,7 +8,7 @@ An intelligent, conversational phone recommendation system powered by Google Gem
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
 [![Google Gemini](https://img.shields.io/badge/Google-Gemini_AI-4285F4?logo=google)](https://ai.google.dev/)
 
-> **Live Demo:** [View Application](https://main.dqd7udlc7o39h.amplifyapp.com) | **Repository:** [GitHub](https://github.com/Nisarg20/GeminiShoppingAgent)
+> **Live Demo:** [View Application](https://main.dqd7udlc7o39h.amplifyapp.com) | **Phone Images:** [images](https://postimg.cc/gallery/Fzv363s) | **Dataset:** [phone dataset](https://drive.google.com/file/d/1iJmOm5fOi0-aK-Bs4YspgC8OhV2zbkN-/view?usp=sharing) (Data referenced from [GSMArena](https://www.gsmarena.com/)
 
 ---
 
@@ -25,12 +25,6 @@ An intelligent, conversational phone recommendation system powered by Google Gem
 - [API Documentation](#api-documentation)
 - [Usage Examples](#usage-examples)
 - [Security](#security)
-- [Performance](#performance)
-- [Troubleshooting](#troubleshooting)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
-- [References](#references)
 
 ---
 
