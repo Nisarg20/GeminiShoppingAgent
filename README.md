@@ -6,7 +6,7 @@ An intelligent, conversational phone recommendation system powered by Google Gem
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
-[![Python](https://img.shields.io/badge/Python-3.9-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
+[![Python](https://img.shields.io/badge/Python-3.10-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
 [![Google Gemini](https://img.shields.io/badge/Google-Gemini_AI-4285F4?logo=google)](https://ai.google.dev/)
 
 > **Live Demo:** [View Application](https://main.dqd7udlc7o39h.amplifyapp.com) | **Phone Images:** [images](https://postimg.cc/gallery/Fzv363s) | **Dataset:** [phone dataset](https://drive.google.com/file/d/1iJmOm5fOi0-aK-Bs4YspgC8OhV2zbkN-/view?usp=sharing) (Data referenced from [GSMArena](https://www.gsmarena.com/))
