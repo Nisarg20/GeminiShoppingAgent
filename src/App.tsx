@@ -160,11 +160,13 @@ export default function AISearchInterface() {
       }
       
       const data = await response.json();
+
+      const sortedData = data.sort((a: Phone, b: Phone) => a.Price - b.Price);
       
       const message: Message = {
         role: 'assistant',
-        content: `Here's our complete collection of ${data.length} smartphones. Browse through our catalog to find your perfect match!`,
-        phones: data,
+        content: `Here's our complete collection of ${sortedData.length} smartphones. Browse through our catalog to find your perfect match!`,
+        phones: sortedData,
         responseType: 'recommendation'
       };
       
