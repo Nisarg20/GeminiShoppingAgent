@@ -211,24 +211,24 @@ export default function AISearchInterface() {
     <div className="min-h-screen transition-colors duration-700 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
       <div className={`transition-all duration-700 ${
         isSearchActive 
-          ? 'pt-6 sticky top-0 z-40 bg-gradient-to-b from-gray-900/98 via-purple-900/95 to-transparent backdrop-blur-xl border-b border-purple-500/20' 
+          ? 'pt-3 sm:pt-6 sticky top-0 z-40 bg-gradient-to-b from-gray-900/98 via-purple-900/95 to-transparent backdrop-blur-xl border-b border-purple-500/20' 
           : 'flex items-center justify-center min-h-screen'
       }`}>
         <div className={`transition-all duration-700 ${
-          isSearchActive ? 'w-full px-6 pb-4' : 'w-full max-w-3xl px-6'
+          isSearchActive ? 'w-full px-3 sm:px-6 pb-3 sm:pb-4' : 'w-full max-w-3xl px-4 sm:px-6'
         }`}>
           {!isSearchActive && (
-            <div className="text-center mb-12 animate-fade-in">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Sparkles className="w-12 h-12 text-purple-400 animate-pulse" />
-                <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
+            <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-4">
+                <Sparkles className="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 animate-pulse flex-shrink-0" />
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
                   AI Phone Assistant
                 </h1>
               </div>
-              <p className="text-xl text-gray-300">
+              <p className="text-sm sm:text-base lg:text-xl text-gray-300 px-2">
                 Ask me anything about phones - from technical specs to buying advice!
               </p>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
+              <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 max-w-2xl mx-auto px-2 sm:px-0">
                 {[
                   "Best camera phone under ₹30,000?",
                   "Compact phone with good one-hand use",
@@ -243,7 +243,7 @@ export default function AISearchInterface() {
                       setSearchQuery(example);
                       setTimeout(handleSearch, 100);
                     }}
-                    className="text-left px-4 py-3 rounded-xl bg-gray-800/40 border border-purple-500/30 text-gray-300 hover:bg-gray-800/60 hover:border-purple-500/50 transition-all text-sm"
+                    className="text-left px-3 sm:px-4 py-2 sm:py-3 rounded-xl bg-gray-800/40 border border-purple-500/30 text-gray-300 hover:bg-gray-800/60 hover:border-purple-500/50 transition-all text-xs sm:text-sm"
                   >
                     {example}
                   </button>
@@ -260,30 +260,35 @@ export default function AISearchInterface() {
             } animate-pulse`} />
             
             <div className="relative backdrop-blur-xl rounded-2xl transition-all duration-700 bg-gray-800/80 border border-purple-500/30 shadow-2xl">
-              <div className="flex items-center gap-3 p-4">
-                <Search className="w-5 h-5 flex-shrink-0 text-purple-400" />
+              <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4">
+                <Search className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-purple-400" />
                 
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask me: 'What is OIS vs EIS?' or 'Best gaming phone under 60k?'..."
-                  className="flex-1 bg-transparent text-base outline-none text-white placeholder-gray-400"
+                  placeholder= "Ask me anything"
+                  className="flex-1 bg-transparent text-sm sm:text-base outline-none text-white placeholder-gray-400"
                 />
 
-                
-                <button onClick={handleShowAllPhones} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors text-sm">
-                <Grid3x3 className="w-3 h-3 sm:w-4 sm:h-4" /><span className="hidden sm:inline">Catalog</span> </button>
-            
+                <div className="flex items-center gap-2  sm:w-auto">
+                  <button 
+                    onClick={handleShowAllPhones} 
+                    className="flex items-center justify-center gap-1 sm:gap-2 flex-1 sm:flex-none px-2 sm:px-3 py-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors text-xs sm:text-sm whitespace-nowrap"
+                  >
+                    <Grid3x3 className="w-4 h-4" /> 
+                    <span className="hidden sm:inline">Catalog</span>
+                  </button>
 
-                <button
-                  onClick={handleSearch}
-                  disabled={!searchQuery.trim() || isLoading}
-                  className="p-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <Send className="w-3 h-3 sm:w-4 sm:h-4" />
-                </button>
+                  <button
+                    onClick={handleSearch}
+                    disabled={!searchQuery.trim() || isLoading}
+                    className="p-2 rounded-lg bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+                  >
+                    <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -291,41 +296,41 @@ export default function AISearchInterface() {
       </div>
 
       {isSearchActive && (
-        <div className="px-6 pb-12 animate-fade-in">
+        <div className="px-3 sm:px-6 pb-6 sm:pb-12 animate-fade-in">
           <div className="max-w-7xl mx-auto">
             {error && (
-              <div className="mb-6 rounded-2xl p-6 backdrop-blur-xl bg-red-900/20 border border-red-500/20">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">⚠️</span>
-                  <div>
-                    <h3 className="text-lg font-semibold text-red-300">Error</h3>
-                    <p className="text-red-200">{error}</p>
+              <div className="mb-4 sm:mb-6 rounded-2xl p-4 sm:p-6 backdrop-blur-xl bg-red-900/20 border border-red-500/20">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <span className="text-lg sm:text-2xl flex-shrink-0">⚠️</span>
+                  <div className="min-w-0">
+                    <h3 className="text-base sm:text-lg font-semibold text-red-300">Error</h3>
+                    <p className="text-red-200 text-sm sm:text-base break-words">{error}</p>
                   </div>
                 </div>
               </div>
             )}
 
             {messages.map((message, index) => (
-              <div key={index} className="mb-8">
-                <div className={`flex items-start gap-4 mb-4 ${
+              <div key={index} className="mb-6 sm:mb-8">
+                <div className={`flex items-start gap-2 sm:gap-4 mb-3 sm:mb-4 ${
                   message.role === 'user' ? 'justify-end' : 'justify-start'
                 }`}>
                   {message.role === 'assistant' && (
                     <div className="flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                      <Sparkles className="w-5 h-5 text-white" />
+                      <Sparkles className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-white" />
                     </div>
                   )}
                   
-                  <div className={`max-w-3xl rounded-2xl p-4 ${
+                  <div className={`max-w-xs sm:max-w-md lg:max-w-3xl rounded-2xl p-3 sm:p-4 ${
                     message.role === 'user'
-                      ? 'bg-purple-500/20 border border-purple-400/50 text-white'
-                      : 'bg-gray-800/60 border border-purple-500/20 text-gray-200'
+                      ? 'bg-purple-500/20 border border-purple-400/50 text-white rounded-br-none'
+                      : 'bg-gray-800/60 border border-purple-500/20 text-gray-200 rounded-bl-none'
                   }`}>
-                    <p className="text-base leading-relaxed whitespace-pre-wrap">{message.content}</p>
+                    <p className="text-sm sm:text-base leading-relaxed whitespace-pre-wrap">{message.content}</p>
                     {message.rationale && message.role === 'assistant' && (
-                      <div className="mt-3 pt-3 border-t border-purple-500/20">
-                        <p className="text-sm text-purple-300 flex items-start gap-2">
-                          <span className="text-purple-400 font-semibold">💡 Why:</span>
+                      <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-purple-500/20">
+                        <p className="text-xs sm:text-sm text-purple-300 flex items-start gap-2">
+                          <span className="text-purple-400 font-semibold flex-shrink-0">💡</span>
                           <span className="text-gray-400">{message.rationale}</span>
                         </p>
                       </div>
@@ -333,14 +338,14 @@ export default function AISearchInterface() {
                   </div>
 
                   {message.role === 'user' && (
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">You</span>
+                    <div className="flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                      <span className="text-white text-xs sm:text-sm font-semibold">You</span>
                     </div>
                   )}
                 </div>
 
                 {message.phones && message.phones.length > 0 && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mt-4 sm:mt-6">
                     {message.phones.map((phone) => {
                       const { ram, storage } = extractMainSpecs(phone);
                       return (
@@ -349,56 +354,38 @@ export default function AISearchInterface() {
                           onClick={() => setSelectedPhone(phone)}
                           className="group relative backdrop-blur-xl rounded-2xl bg-gray-800/60 border border-purple-500/20 overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 cursor-pointer"
                         >
-                          <div className="relative h-64 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+                          <div className="relative h-40 sm:h-48 lg:h-64 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
                             {phone.Image ? (
                               <>
                                 <img 
                                   src={phone.Image}
                                   alt={phone.name} 
-                                  className="absolute inset-0 w-full h-full object-contain p-4"
+                                  className="absolute inset-0 w-full h-full object-contain p-2 sm:p-4"
                                   onError={(e) => {
                                     e.currentTarget.style.display = 'none';
-                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
                                   }}
                                 />
-                                <div className="hidden absolute inset-0 flex items-center justify-center">
-                                  <div className="text-6xl opacity-20">📱</div>
-                                </div>
                               </>
                             ) : (
-                              <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="text-6xl opacity-20">📱</div>
-                              </div>
+                              <div className="flex items-center justify-center h-full text-4xl sm:text-5xl">📱</div>
                             )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
-                            
-                            <div className="absolute top-3 right-3 px-3 py-1 rounded-full backdrop-blur-md bg-purple-500/30 border border-purple-400/50">
-                              <span className="text-xs font-semibold text-purple-200">{phone.brand}</span>
-                            </div>
                           </div>
 
-                          <div className="p-5">
-                            <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2 group-hover:text-purple-300 transition-colors">
-                              {phone.name}
-                            </h3>
-                            
-                            <div className="flex items-baseline gap-2 mb-3">
-                              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
-                                {formatPrice(phone.Price)}
-                              </span>
-                            </div>
+                          <div className="p-3 sm:p-4">
+                            <h3 className="font-semibold text-white text-sm sm:text-base line-clamp-2 mb-2">{phone.name}</h3>
+                            <p className="text-purple-400 font-bold text-sm sm:text-base mb-3">{formatPrice(phone.Price)}</p>
 
-                            <div className="space-y-1.5 text-sm text-gray-400">
-                              <div className="flex items-center gap-2">
-                                <Cpu className="w-3.5 h-3.5 text-purple-400" />
+                            <div className="space-y-1.5">
+                              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
+                                <Cpu className="w-3 h-3 text-purple-400 flex-shrink-0" />
                                 <span className="line-clamp-1">{phone.Platform?.chipset || 'N/A'}</span>
                               </div>
-                              <div className="flex items-center gap-2">
-                                <Monitor className="w-3.5 h-3.5 text-purple-400" />
+                              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
+                                <Monitor className="w-3 h-3 text-purple-400 flex-shrink-0" />
                                 <span>{ram} + {storage}</span>
                               </div>
-                              <div className="flex items-center gap-2">
-                                <Battery className="w-3.5 h-3.5 text-purple-400" />
+                              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
+                                <Battery className="w-3 h-3 text-purple-400 flex-shrink-0" />
                                 <span className="line-clamp-1">{phone.Battery?.type || 'N/A'}</span>
                               </div>
                             </div>
@@ -414,8 +401,8 @@ export default function AISearchInterface() {
                 )}
               </div>
             ))}
-
-            {isLoading && (
+            
+          {isLoading && (
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
                   <Sparkles className="w-5 h-5 text-white animate-spin" />
@@ -438,70 +425,70 @@ export default function AISearchInterface() {
 
       {selectedPhone && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-sm animate-fade-in"
           onClick={() => setSelectedPhone(null)}
         >
           <div 
-            className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border border-purple-500/30 shadow-2xl"
+            className="w-full sm:max-w-2xl lg:max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto bg-gradient-to-br from-gray-800 to-gray-900 rounded-t-3xl sm:rounded-2xl border border-purple-500/30 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedPhone(null)}
-              className="sticky top-4 right-4 float-right m-4 p-2 rounded-full bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors z-10"
+              className="sticky top-2 sm:top-4 right-2 sm:right-4 float-right m-2 sm:m-4 p-1.5 sm:p-2 rounded-full bg-purple-500/20 border border-purple-400/50 text-purple-200 hover:bg-purple-500/30 transition-colors z-10"
             >
-              ✕
+              <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
-            <div className="p-8">
-              <div className="flex items-start gap-6 mb-6">
-                <div className="flex-shrink-0 w-32 h-32 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center overflow-hidden">
+            <div className="p-4 sm:p-8">
+              <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-6 mb-6">
+                <div className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 flex-shrink-0 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center overflow-hidden">
                   {selectedPhone.Image ? (
                     <img 
                       src={selectedPhone.Image}
                       alt={selectedPhone.name}
-                      className="w-full h-full object-contain p-2"
+                      className="w-full h-full object-contain p-1.5 sm:p-2"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                         if (e.currentTarget.parentElement) {
-                          e.currentTarget.parentElement.innerHTML = '<div class="text-5xl">📱</div>';
+                          e.currentTarget.parentElement.innerHTML = '<div class="text-3xl sm:text-5xl">📱</div>';
                         }
                       }}
                     />
                   ) : (
-                    <div className="text-5xl">📱</div>
+                    <div className="text-3xl sm:text-5xl">📱</div>
                   )}
                 </div>
-                <div className="flex-1">
-                  <div className="inline-block px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/50 text-purple-200 text-sm mb-2">
+                <div className="flex-1 min-w-0">
+                  <div className="inline-block px-2.5 py-1 rounded-full bg-purple-500/20 border border-purple-400/50 text-purple-200 text-xs sm:text-sm mb-2">
                     {selectedPhone.brand}
                   </div>
-                  <h2 className="text-3xl font-bold text-white mb-2">{selectedPhone.name}</h2>
-                  <p className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 break-words">{selectedPhone.name}</h2>
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
                     {formatPrice(selectedPhone.Price)}
                   </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="bg-gray-800/50 rounded-xl p-4 border border-purple-500/10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Monitor className="w-5 h-5 text-purple-400" />
-                      <h3 className="text-lg font-semibold text-white">Display</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="bg-gray-800/50 rounded-xl p-3 sm:p-4 border border-purple-500/10">
+                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                      <Monitor className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
+                      <h3 className="text-base sm:text-lg font-semibold text-white">Display</h3>
                     </div>
-                    <div className="space-y-2 text-sm text-gray-300">
+                    <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
                       <p><span className="text-purple-300">Type:</span> {selectedPhone.Display?.type}</p>
                       <p><span className="text-purple-300">Size:</span> {selectedPhone.Display?.size}</p>
                       <p><span className="text-purple-300">Resolution:</span> {selectedPhone.Display?.resolution}</p>
                     </div>
                   </div>
 
-                  <div className="bg-gray-800/50 rounded-xl p-4 border border-purple-500/10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Cpu className="w-5 h-5 text-purple-400" />
-                      <h3 className="text-lg font-semibold text-white">Performance</h3>
+                  <div className="bg-gray-800/50 rounded-xl p-3 sm:p-4 border border-purple-500/10">
+                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                      <Cpu className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
+                      <h3 className="text-base sm:text-lg font-semibold text-white">Performance</h3>
                     </div>
-                    <div className="space-y-2 text-sm text-gray-300">
+                    <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
                       <p><span className="text-purple-300">Chipset:</span> {selectedPhone.Platform?.chipset}</p>
                       <p><span className="text-purple-300">CPU:</span> {selectedPhone.Platform?.CPU}</p>
                       <p><span className="text-purple-300">GPU:</span> {selectedPhone.Platform?.GPU}</p>
@@ -509,42 +496,42 @@ export default function AISearchInterface() {
                     </div>
                   </div>
 
-                  <div className="bg-gray-800/50 rounded-xl p-4 border border-purple-500/10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Battery className="w-5 h-5 text-purple-400" />
-                      <h3 className="text-lg font-semibold text-white">Battery</h3>
+                  <div className="bg-gray-800/50 rounded-xl p-3 sm:p-4 border border-purple-500/10">
+                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                      <Battery className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
+                      <h3 className="text-base sm:text-lg font-semibold text-white">Battery</h3>
                     </div>
-                    <div className="space-y-2 text-sm text-gray-300">
+                    <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
                       <p><span className="text-purple-300">Type:</span> {selectedPhone.Battery?.type}</p>
                       <p><span className="text-purple-300">Charging:</span> {selectedPhone.Battery?.charging}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="bg-gray-800/50 rounded-xl p-4 border border-purple-500/10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Camera className="w-5 h-5 text-purple-400" />
-                      <h3 className="text-lg font-semibold text-white">Camera</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="bg-gray-800/50 rounded-xl p-3 sm:p-4 border border-purple-500/10">
+                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                      <Camera className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
+                      <h3 className="text-base sm:text-lg font-semibold text-white">Camera</h3>
                     </div>
-                    <div className="space-y-2 text-sm text-gray-300">
+                    <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
                       <p><span className="text-purple-300">Main:</span> {selectedPhone.Camera?.main}</p>
                       <p><span className="text-purple-300">Selfie:</span> {selectedPhone.Camera?.selfie}</p>
                     </div>
                   </div>
 
-                  <div className="bg-gray-800/50 rounded-xl p-4 border border-purple-500/10">
-                    <h3 className="text-lg font-semibold text-white mb-3">Memory</h3>
-                    <div className="space-y-2 text-sm text-gray-300">
+                  <div className="bg-gray-800/50 rounded-xl p-3 sm:p-4 border border-purple-500/10">
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Memory</h3>
+                    <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
                       <p><span className="text-purple-300">RAM:</span> {selectedPhone.Memory?.RAM}</p>
                       <p><span className="text-purple-300">Internal:</span> {selectedPhone.Memory?.internal}</p>
                       <p><span className="text-purple-300">Type:</span> {selectedPhone.Memory?.storage_type}</p>
                     </div>
                   </div>
 
-                  <div className="bg-gray-800/50 rounded-xl p-4 border border-purple-500/10">
-                    <h3 className="text-lg font-semibold text-white mb-3">Body</h3>
-                    <div className="space-y-2 text-sm text-gray-300">
+                  <div className="bg-gray-800/50 rounded-xl p-3 sm:p-4 border border-purple-500/10">
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Body</h3>
+                    <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
                       <p><span className="text-purple-300">Dimensions:</span> {selectedPhone.Body?.dimensions}</p>
                       <p><span className="text-purple-300">Weight:</span> {selectedPhone.Body?.weight}</p>
                       <p><span className="text-purple-300">Build:</span> {selectedPhone.Body?.build}</p>
