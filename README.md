@@ -14,17 +14,17 @@ An intelligent, conversational phone recommendation system powered by Google Gem
 
 ## 📋 Table of Contents
 
-- [Overview](##overview)
-- [Features](##features)
-- [Architecture](##architecture)
-- [Tech Stack](##tech-stack)
-- [Project Structure](##project-structure)
-- [Setup & Installation](##setup--installation)
-- [Environment Variables](##environment-variables)
-- [Deployment](##deployment)
-- [API Documentation](##api-documentation)
-- [Usage Examples](##usage-examples)
-- [Security](##security)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Architecture](#-architecture)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Setup & Installation](#-setup--installation)
+- [Environment Variables](#-environment-variables)
+- [Deployment](#-deployment)
+- [API Documentation](#-api-documentation)
+- [Usage Examples](#-usage-examples)
+- [Security](#-security)
 
 ---
 
